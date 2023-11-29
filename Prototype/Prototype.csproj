@@ -121,6 +121,7 @@
     <Content Include="Library\Images\megaphone.png" />
     <Content Include="Library\Images\report.png" />
     <Content Include="Library\Images\schedule.png" />
+    <Content Include="Library\Images\students.png" />
     <Content Include="Library\Images\toplogo-red.png" />
     <Content Include="Library\Images\toplogo-white.png" />
     <Content Include="Library\Images\user-white.png" />
