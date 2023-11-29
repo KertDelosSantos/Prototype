@@ -68,6 +68,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Assets\create.css" />
     <Content Include="Assets\StyleSheet1.css" />
     <Content Include="Assets\StyleSheet2.css" />
     <Content Include="Global.asax" />
@@ -79,6 +80,7 @@
     <Content Include="Hope\AdminLogin.aspx" />
     <Content Include="Hope\StudentCreate.aspx" />
     <Content Include="Hope\StudentLogin.aspx" />
+    <Content Include="Hope\Student\create.aspx" />
     <Content Include="Hope\Student\Dashboard.aspx" />
     <Content Include="Hope\Student\Inbox.aspx" />
     <Content Include="Hope\Student\Payment.aspx" />
@@ -191,6 +193,13 @@
     </Compile>
     <Compile Include="Hope\StudentLogin.aspx.designer.cs">
       <DependentUpon>StudentLogin.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Hope\Student\create.aspx.cs">
+      <DependentUpon>create.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Hope\Student\create.aspx.designer.cs">
+      <DependentUpon>create.aspx</DependentUpon>
     </Compile>
     <Compile Include="Hope\Student\Dashboard.aspx.cs">
       <DependentUpon>Dashboard.aspx</DependentUpon>

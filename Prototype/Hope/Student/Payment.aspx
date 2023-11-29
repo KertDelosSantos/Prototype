@@ -190,80 +190,94 @@
                                     </div>
                                 </div>
                                 <!-- end tab pane -->
-                                <div class="tab-pane fade" id="steparrow-description-info" role="tabpanel" aria-labelledby="steparrow-description-info-tab">
-                                    <div class="school-fees-container">
-                                        <h2>School Fees</h2>
-                                        <div id="school-fees-form">
-                                            <div class="form-section">
-                                                <h3>Schedule of Fees</h3>
+                               <div class="tab-pane fade" id="steparrow-description-info" role="tabpanel" aria-labelledby="steparrow-description-info-tab">
+    <div class="container mt-5">
+        <div class="card">
+            <div class="card-header bg-primary text-white">
+                <h3 class="mb-0">School Fees</h3>
+            </div>
+            <div class="card-body">
+                <!-- Schedule of Fees -->
+                <div class="form-group">
+                    <h4>Schedule of Fees</h4>
+                    <asp:RadioButtonList ID="RadioButtonList1" runat="server" RepeatDirection="Horizontal" CssClass="form-check form-check-inline">
+                        <asp:ListItem Text="Partial Payment" Value="Partial" />
+                        <asp:ListItem Text="Full Payment" Value="Full" />
+                    </asp:RadioButtonList>
+                </div>
 
-                                                <asp:RadioButtonList ID="RadioButtonList1" runat="server" RepeatDirection="Horizontal" Width="20%">
-                                                    <asp:ListItem>Partial Payment</asp:ListItem>
-                                                    <asp:ListItem>Full Payment</asp:ListItem>
-                                                </asp:RadioButtonList>
+                <!-- Payment Method -->
+                <div class="form-group">
+                    <label for="payment-method-select">Payment Method</label>
+                    <select name="payment_method" id="payment-method-select" class="form-control">
+                        <option value="Cash">Cash</option>
+                        <option value="Gcash">Gcash</option>
+                    </select>
+                </div>
 
-                                            </div>
-                                            <div class="form-section">
-                                                <h3>Payment Method</h3>
-                                                <select name="payment_method" id="payment-method-select">
-                                                    <option value="Cash">Cash</option>
-                                                    <option value="Gcash">Gcash</option>
-                                                </select>
-                                            </div>
-                                            <div class="fee-details">
-                                                <div class="detail">
-                                                    <label for="tuition">Tuition:</label>
-                                                    <input type="number" id="tuition" name="tuition" readonly="readonly">
-                                                </div>
-                                                <div class="detail">
-                                                    <label for="miscellaneous">Miscellaneous:</label>
-                                                    <input type="number" id="miscellaneous" name="miscellaneous" readonly="readonly">
-                                                </div>
-                                                <div class="total">
-                                                    <label for="total">Total:</label>
-                                                    <input type="number" id="total" name="total" placeholder="Total Amount" readonly="readonly">
-                                                </div>
-                                            </div>
-                                            <div class="form-section">
-                                                <h3>Discount Offers</h3>
-                                                <select name="discount_offers" id="discount-offers-select" onchange="updateDiscountPercent()">
-                                                    <option value="option1" disabled selected>Select Discount Offers</option>
-                                                    <option value="New Student">New Student Discount</option>
-                                                    <option value="Old Student">Old Student Discount</option>
-                                                    <option value="PWD Student">PWD Student Discount</option>
-                                                    <option value="Solo Parent Student">Solo Parent Student Discount</option>
-                                                    <option value="Returning Student">Returning Student Discount</option>
-                                                    <option value="Church Endorsement">Church Endorsement Discount</option>
-                                                    <option value="Academic Exellence">Academic Exellence Discount</option>
-                                                    <option value="Sibling Student">Sibling Student Discount</option>
-                                                    <option value="Employee">Employee Discount</option>
-                                                </select>
-                                            </div>
-                                            <div class="discount-details">
-                                                <div class="detail">
-                                                    <label for="discount_percent">Discount Percent:</label>
-                                                    <input type="number" id="discount_percent" name="discount_percent" readonly="readonly">
-                                                </div>
-                                                <div class="detail">
-                                                    <label for="additional_discount">Other Additional Discount:</label>
-                                                    <input type="text" id="additional_discount" name="additional_discount">
-                                                </div>
-                                                <div class="total">
-                                                    <label for="total_discount">Total Amount of Discount:</label>
-                                                    <input type="number" id="total_discount" name="total_discount" placeholder="Administrator should complete this section." readonly="readonly">
-                                                </div>
-                                                <div class="total">
-                                                    <label for="total_final">Final Amount:</label>
-                                                    <input type="number" id="total_final" name="total_final" readonly="readonly">
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="d-flex align-items-start gap-3 mt-4">
-                                        <button type="button" class="btn btn-light btn-label previestab" data-previous="steparrow-gen-info-tab"><i class="ri-arrow-left-line label-icon align-middle fs-16 me-2"></i>Back to Student Information</button>
-                                        <button type="button" class="btn btn-success btn-label right ms-auto nexttab nexttab" data-nexttab="pills-appointmen-tab"><i class="ri-arrow-right-line label-icon align-middle fs-16 ms-2"></i>Go to Appointment Schedule</button>
-                                    </div>
-                                </div>
+                <!-- Fee Details -->
+                <h4>Fee Details</h4>
+                <div class="row">
+                    <div class="col-md-4 mb-3">
+                        <label for="tuition">Tuition:</label>
+                        <input class="form-control" type="number" id="tuition" name="tuition" readonly="readonly">
+                    </div>
+                    <div class="col-md-4 mb-3">
+                        <label for="miscellaneous">Miscellaneous:</label>
+                        <input class="form-control" type="number" id="miscellaneous" name="miscellaneous" readonly="readonly">
+                    </div>
+                    <div class="col-md-4 mb-3">
+                        <label for="total">Total:</label>
+                        <input class="form-control" type="number" id="total" name="total" placeholder="Total Amount" readonly="readonly">
+                    </div>
+                </div>
+
+                <!-- Discount Offers -->
+                <h4>Discount Offers</h4>
+                <div class="row">
+                    <div class="col-md-6 mb-3">
+                        <label for="discount-offers-select">Select Discount Offers</label>
+                        <select class="form-control" name="discount_offers" id="discount-offers-select" onchange="updateDiscountPercent()">
+                             <option value="option1" disabled selected>Select Discount Offers</option>
+                            <option value="New Student">New Student Discount</option>
+                            <option value="Old Student">Old Student Discount</option>
+                            <option value="PWD Student">PWD Student Discount</option>
+                            <option value="Solo Parent Student">Solo Parent Student Discount</option>
+                            <option value="Returning Student">Returning Student Discount</option>
+                             <option value="Church Endorsement">Church Endorsement Discount</option>
+                               <option value="Academic Exellence">Academic Exellence Discount</option>
+                               <option value="Sibling Student">Sibling Student Discount</option>
+                            <option value="Employee">Employee Discount</option>
+                        </select>
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <label for="discount_percent">Discount Percent:</label>
+                        <input class="form-control" type="number" id="discount_percent" name="discount_percent" readonly="readonly">
+                    </div>
+                </div>
+                <!-- Additional Discount -->
+                <div class="form-group">
+                    <label for="additional_discount">Other Additional Discount:</label>
+                    <input class="form-control" type="text" id="additional_discount" name="additional_discount">
+                </div>
+                <!-- Final Amount -->
+                <div class="form-group">
+                    <label for="total_final">Final Amount:</label>
+                    <input class="form-control" type="number" id="total_final" name="total_final" readonly="readonly">
+                </div>
+            </div>
+            <div class="card-footer d-flex justify-content-between">
+                <button type="button" class="btn btn-secondary btn-label previestab" data-previous="steparrow-gen-info-tab">
+                    <i class="ri-arrow-left-line label-icon align-middle fs-16 me-2"></i>Back to Student Information
+                </button>
+                <button type="button" class="btn btn-success btn-label right ms-auto nexttab nexttab" data-nexttab="pills-appointmen-tab">
+                    <i class="ri-arrow-right-line label-icon align-middle fs-16 ms-2"></i>Go to Appointment Schedule
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
                                 <!-- end tab pane -->
                                 <div class="tab-pane fade" id="steparrow-appointment-info" role="tabpanel" aria-labelledby="steparrow-appointment-info-tab">
                                     <div class="container mt-5">
