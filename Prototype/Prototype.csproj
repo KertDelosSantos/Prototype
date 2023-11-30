@@ -119,6 +119,7 @@
     <Content Include="Library\Images\mail-white.png" />
     <Content Include="Library\Images\mail.png" />
     <Content Include="Library\Images\megaphone.png" />
+    <Content Include="Library\Images\qr.jpg" />
     <Content Include="Library\Images\report.png" />
     <Content Include="Library\Images\schedule.png" />
     <Content Include="Library\Images\students.png" />
