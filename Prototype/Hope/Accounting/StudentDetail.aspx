@@ -232,11 +232,8 @@
                                     </div>
                                     <div style="display: flex; justify-content: flex-end">
                                         <div class="d-flex align-items-start gap-3 mt-4">
-                                            <button type="button" class="btn btn-light btn-label previestab" data-previous="steparrow-gen-info-tab" style="display: flex; align-items: center; gap: inherit; border: solid 1px; border-color: gray"><img src="../../Library/Images/backgray.png" height="21" width="21"/>Back</button>
-                                            <a href="StudentDetailEdit.aspx" type="button" class="btn btn-light btn-label previestab" style="display: flex; align-items: center; gap: inherit; border: solid 1px; border-color: gray; background-color: #2e8fc5; border-radius: 10px; color: white; width: 120px" onclick="enableEditing()">
-                                                <img src="../../Library/Images/backad.png" height="21" width="21">EDIT
-                                            </a>
-                                            <asp:Button ID="Button1" runat="server" Text="Button" />
+                                            <button type="button" class="btn btn-light btn-label previestab" data-previous="steparrow-gen-info-tab" style="display: flex; align-items: center; justify-content: center; border: solid 1px; border-color: gray; background-color: #2e8fc5; border-radius: 10px; color: white; width: 120px; gap: inherit;"><img src="../../Library/Images/backad.png" height="21" width="21"/>Back</button>
+                                            <asp:Button ID="Button1" runat="server" Text="Submit" class="btn btn-light btn-label" style="display: flex; align-items: center; justify-content: center; border: solid 1px; border-color: gray; background-color: #2e8fc5; border-radius: 10px; color: white; width: 120px"/>
                                         </div>
                                     </div>
                                 </div>
@@ -249,7 +246,6 @@
     </div>
 <script type="text/javascript">
     document.addEventListener("DOMContentLoaded", function () {
-
         // Add click event listener to 'Next Step' buttons
         document.querySelectorAll('.nexttab').forEach(function (button1) {
             button1.addEventListener('click', function () {
