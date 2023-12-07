@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Data;
 using System.Data.SqlClient;
+using System.IO;
 using System.Web.UI.WebControls;
 
 namespace Prototype
@@ -9,49 +10,51 @@ namespace Prototype
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (!IsPostBack)
-            {
-                // Call a method to retrieve data from the database
-                DataTable dt = GetDataFromDatabase();
 
-                // Bind the data to the DropDownList
-                DropDownList1.DataSource = dt;
-                DropDownList1.DataTextField = "other_discount"; // Replace with the actual field name from your database
-                DropDownList1.DataValueField = "other_discount"; // Replace with the actual field name from your database
-                DropDownList1.DataBind();
-                // Add additional options
-                DropDownList1.Items.Insert(0, new ListItem("Approved", "Approved"));
-                DropDownList1.Items.Insert(1, new ListItem("Declined", "Declined"));
-
-                // Set the pre-selected value based on the data from the database
-                if (dt.Rows.Count > 0)
-                {
-                    string preSelectedValue = dt.Rows[0]["other_discount"].ToString();
-                    DropDownList1.SelectedValue = preSelectedValue;
-                }
-            }
         }
 
-        private DataTable GetDataFromDatabase()
+        protected void UploadImage(object sender, EventArgs e)
         {
-            // Replace the connection string and query with your actual values
-            string connectionString = "Data Source=DESKTOP-EOET84T\\MSSQLSERVER_PC;Initial Catalog=SIA_BILLING;Persist Security Info=True;User ID=sa;Password=123";
-            string query = "SELECT other_discount FROM Payment";
-
-            using (SqlConnection connection = new SqlConnection(connectionString))
+            if (profileinput.HasFile)
             {
-                using (SqlCommand command = new SqlCommand(query, connection))
+                try
                 {
-                    using (SqlDataAdapter adapter = new SqlDataAdapter(command))
-                    {
-                        DataTable dt = new DataTable();
-                        adapter.Fill(dt);
-                        return dt;
-                    }
+                    // Get the file name
+                    string fileName = Path.GetFileName(profileinput.FileName);
+
+                    // Specify the server path to save the uploaded file
+                    string serverPath = Server.MapPath("~/Uploads/"); // Update this path accordingly
+
+                    // Combine the server path and file name
+                    string filePath = Path.Combine(serverPath, fileName);
+
+                    // Save the file to the server
+                    profileinput.SaveAs(filePath);
+
+                    // Display the uploaded image (optional)
+                    userimage.Src = "~/Uploads/" + fileName; // Update the path accordingly
+
+                    // Now, you can save the file information in the database or perform other actions
+                }
+                catch (Exception ex)
+                {
+                    // Handle the exception (log, display error message, etc.)
+                    Response.Write($"<script>alert('Error uploading image: {ex.Message}');</script>");
                 }
             }
+            else
+            {
+                // Handle the case where no file is selected
+                Response.Write("<script>alert('Please choose a file');</script>");
+            }
         }
+        private void SaveImageInfoToDatabase(string fileName)
+        {
+            // Update this part to insert the file information into the Student table in your database
+            // Use the 'fileName' variable to store the file name or path in the database
+            // ...
 
-            
+
+        }
     }
 }

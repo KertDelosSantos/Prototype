@@ -44,6 +44,8 @@ namespace Prototype.Hope
                 ClientScript.RegisterStartupScript(this.GetType(), "alert", "swal('Error', 'Username already exists.', 'error');", true);
                 return;
             }
+            ClientScript.RegisterStartupScript(this.GetType(), "alert", "swal('Success', 'Account created successfully.', 'success').then((isConfirmed) => {if (isConfirmed) {window.location.href = 'StudentLogin.aspx'; }});", true);
+
 
             // Continue with the insertion
             string query = "INSERT INTO StudentAccount (name, email, username, password) VALUES (@name, @email, @username, @password)";
