@@ -10,7 +10,9 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="Body" runat="server">
     <div class="container">
         <div class="row" style="height: 400px">
-            <div class="col-sm-7" style=""></div>
+            <div class="col-sm-7" style="">
+                <img src="../../Library/Images/ADMIN__CASHIER___1.png" style="height: 370px; padding: inherit;" />
+            </div>
             <div class="col-sm-5" style="">
             </div>
         </div>
@@ -61,7 +63,7 @@
                         <div class="p-3 border bg-light" style="border-radius: 20px">
                             <a class="inner-div" href="Calendar.aspx">
                                 <div>
-                                    <img src="../../Library/Images/calendar.png" style="width: 100px; height: 100px" />
+                                    <img src="../../Library/Images/ADMIN__CASHIER.png"   style="width: 100px; height: 100px" />
                                 </div>
                                 <div style="display: flex; justify-content: center; width: 100%;">
                                     <h4>Calendar</h4>

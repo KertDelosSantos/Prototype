@@ -100,6 +100,8 @@
     <Content Include="Library\css\bootstrap.min.css" />
     <Content Include="Library\css\bootstrap.rtl.css" />
     <Content Include="Library\css\bootstrap.rtl.min.css" />
+    <Content Include="Library\Images\ADMIN__CASHIER.png" />
+    <Content Include="Library\Images\ADMIN__CASHIER___1.png" />
     <Content Include="Library\Images\angle-left.png" />
     <Content Include="Library\Images\appointment.png" />
     <Content Include="Library\Images\appppppp.png" />
