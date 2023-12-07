@@ -127,7 +127,6 @@ namespace Prototype.Hope.Student
                                     }
                                     commandP.Parameters.AddWithValue("@student_id", studentId);
                                     int paymentId = Convert.ToInt32(commandP.ExecuteScalar());
-
                                     string TRA = "INSERT INTO [Transaction] OUTPUT INSERTED.transaction_id VALUES (@date, @student_id, @payment_id, @status)";
                                     using (SqlCommand commandTRA = new SqlCommand(TRA, connection))
                                     {
@@ -135,22 +134,17 @@ namespace Prototype.Hope.Student
                                         commandTRA.Parameters.AddWithValue("@student_id", studentId);
                                         commandTRA.Parameters.AddWithValue("@payment_id", paymentId);
                                         commandTRA.Parameters.AddWithValue("@status", "Pending");
-
                                         // ExecuteScalar returns the first column of the first row from the result set
                                         int transactionId = Convert.ToInt32(commandTRA.ExecuteScalar());
-
                                         // Now you can use 'transactionId' in subsequent operations
                                         // For example, you can display it or use it in another insert operation.
                                         string ODB = "INSERT INTO OverdueBalance VALUES (@student_id, @transaction_id, @date, @total, @due)";
                                         using (SqlCommand commandODB = new SqlCommand(ODB, connection))
                                         {
-
                                             commandODB.Parameters.AddWithValue("@student_id", studentId);
                                             commandODB.Parameters.AddWithValue("@transaction_id", transactionId);
                                             commandODB.Parameters.AddWithValue("@date", appointmentDate);
                                             commandODB.Parameters.AddWithValue("@total", finaltotalInt);
-
-
                                             if (paymentschedule == "Partial Payment")
                                             {
                                                 commandODB.Parameters.AddWithValue("@due", resultDueDate);
@@ -159,7 +153,6 @@ namespace Prototype.Hope.Student
                                             {
                                                 commandODB.Parameters.AddWithValue("@due", appointmentDate);
                                             }
-
                                             commandODB.ExecuteNonQuery();
                                         }
                                     }
@@ -179,7 +172,7 @@ namespace Prototype.Hope.Student
                         }
                         else
                         {
-                            ScriptManager.RegisterStartupScript(this, GetType(), "alert", "swal('Failed!', 'Registration Failed', 'warning')", true);
+                           ScriptManager.RegisterStartupScript(this, GetType(), "alert", "swal('Registration Failed!', 'Please Retry and select another appoinment date', 'warning')", true);
 
                         }
                     }
@@ -189,7 +182,8 @@ namespace Prototype.Hope.Student
             {
                 // Log the exception details (ex.Message) for debugging purposes
                 // Display a user-friendly error message
-                Response.Write("<script>alert('Registration failed: " + ex.Message + "');</script>");
+               // Response.Write("<script>alert('Registration failed: " + ex.Message + "');</script>");
+                ScriptManager.RegisterStartupScript(this, GetType(), "alert", "swal('Failed!', '" + ex.Message + "', 'warning')", true);
             }
         }
     }
