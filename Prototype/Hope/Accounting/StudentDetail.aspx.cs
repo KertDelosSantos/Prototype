@@ -1,7 +1,9 @@
 ﻿using Prototype.Hope.Student;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Data.SqlClient;
+using System.Diagnostics;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
@@ -12,6 +14,7 @@ namespace Prototype.Hope.Accounting
 {
     public partial class StudentDetail : System.Web.UI.Page
     {
+        string connectionString = "Data Source=DESKTOP-EOET84T\\MSSQLSERVER_PC;Initial Catalog=SIA_BILLING;Persist Security Info=True;User ID=sa;Password=123";
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!IsPostBack)
@@ -25,8 +28,7 @@ namespace Prototype.Hope.Accounting
         }
         private void LoadStudentDetails()
         {
-            string connectionString = "Data Source=DESKTOP-EOET84T\\MSSQLSERVER_PC;Initial Catalog=SIA_BILLING;Persist Security Info=True;User ID=sa;Password=123";
-            string STUD = "SELECT * FROM Student WHERE student_id = @StudentId";
+             string STUD = "SELECT * FROM Student WHERE student_id = @StudentId";
             string PAY = "SELECT * FROM Payment WHERE student_id = @StudentId";
 
             using (SqlConnection con = new SqlConnection(connectionString))
@@ -74,7 +76,22 @@ namespace Prototype.Hope.Accounting
                                 fee.Text = paymentReader["schoolfee"].ToString();
                                 discount.Text = paymentReader["discount_type"].ToString();
                                 percent.Text = paymentReader["discount"].ToString();
-                                other.Text = paymentReader["other_discount"].ToString();
+
+
+                                string otherDiscountValue = paymentReader["other_discount"].ToString();
+                                ListItem otherDiscountItem = DropDownList1.Items.FindByValue(otherDiscountValue);
+                                if (otherDiscountItem != null)
+                                {
+                                    DropDownList1.SelectedValue = otherDiscountItem.Value;
+                                }
+                                else
+                                {
+                                    // The value is not in the DropDownList, add it
+                                    DropDownList1.Items.Insert(0, new ListItem(otherDiscountValue, otherDiscountValue));
+                                    DropDownList1.SelectedValue = otherDiscountValue;
+                                }
+
+
                                 totaldiscount.Text = paymentReader["discount_total"].ToString();
                                 //fee.Text = paymentReader["SCHOOLFEELIST"].ToString();
                                 totalfinal.Text = paymentReader["final_total"].ToString();
@@ -91,32 +108,30 @@ namespace Prototype.Hope.Accounting
                     }
                 }
             }
-
         }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-            protected void editbttn_Click(object sender, EventArgs e)
+        protected void Button1_Click(object sender, EventArgs e)
         {
+            string studentId = Request.QueryString["studentId"];
+            if (!string.IsNullOrEmpty(studentId))
+            {
+                string updateQuery = "UPDATE Payment SET other_discount = @other_discount WHERE student_id = @StudentId";
 
-        }
-        protected void savebttn_Click(object sender, EventArgs e)
-        {
+                using (SqlConnection con = new SqlConnection(connectionString))
+                {
+                    using (SqlCommand cmd = new SqlCommand(updateQuery, con))
+                    {
+                        cmd.Parameters.AddWithValue("@other_discount", DropDownList1.SelectedValue);
+                        cmd.Parameters.AddWithValue("@StudentId", studentId);
 
+                        con.Open();
+                        cmd.ExecuteNonQuery();
+                    }
+                }
+            }
+            else
+            {
+                // Handle the case where studentId is not available
+            }
         }
     }
 }

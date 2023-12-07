@@ -134,31 +134,6 @@
                                     </div>
                                 </div>
                                 <!-- end tab pane -->
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
                                 <div class="tab-pane fade" id="steparrow-description-info-tab" role="tabpanel" aria-labelledby="steparrow-description-info-tab">
                                     <div style="margin-bottom: 50px; padding: 10px; border-bottom: solid; border-width: 2px; border-color: gray; color: blue">
                                         <h2>PAYMENT FORM</h2>
@@ -168,30 +143,30 @@
                                             <div class="row" style="display: flex; gap: 40px">
                                                 <div style="display: flex; margin-left: 50px">
                                                     <h3 class="col-lg-5">SCHEDULE OF FEES</h3>
-                                                    <asp:TextBox ID="schedule" runat="server" class="col-lg-6" Style="font-size: x-large; text-align: center; background-color: #e9ecef; border: 1px solid #ced4da; border-radius: .25rem;" ReadOnly="true"></asp:TextBox>
+                                                    <asp:TextBox ID="schedule" runat="server" class="col-lg-6" Style="font-size: x-large; text-align: center; background-color: #e9ecef; border: 1px solid #ced4da; border-radius: .25rem;" Enabled="false"></asp:TextBox>
                                                 </div>
                                                 <div>
                                                     <div style="display: flex; margin-left: 50px">
                                                         <h5 class="col-lg-4" style="font-weight: normal">Payment Method :</h5>
-                                                        <asp:TextBox ID="method" runat="server" class="col-lg-6" Style="font-size: x-large; text-align: center; background-color: #e9ecef; border: 1px solid #ced4da; border-radius: .25rem;" ReadOnly="true"></asp:TextBox>
+                                                        <asp:TextBox ID="method" runat="server" class="col-lg-6" Style="font-size: x-large; text-align: center; background-color: #e9ecef; border: 1px solid #ced4da; border-radius: .25rem;" Enabled="false"></asp:TextBox>
                                                     </div>
                                                     <div style="display: flex; margin-left: 50px; margin-top: 10px">
                                                         <h5 class="col-lg-4" style="font-weight: normal">Tuition :</h5>
-                                                        <asp:TextBox ID="tuition" runat="server" class="col-lg-6" Style="font-size: x-large; text-align: center; background-color: #e9ecef; border: 1px solid #ced4da; border-radius: .25rem;" ReadOnly="true"></asp:TextBox>
+                                                        <asp:TextBox ID="tuition" runat="server" class="col-lg-6" Style="font-size: x-large; text-align: center; background-color: #e9ecef; border: 1px solid #ced4da; border-radius: .25rem;" Enabled="false"></asp:TextBox>
                                                     </div>
                                                     <div style="display: flex; margin-left: 50px; margin-top: 10px">
                                                         <h5 class="col-lg-4" style="font-weight: normal">Miscellaneous :</h5>
-                                                        <asp:TextBox ID="miscellaneous" runat="server" class="col-lg-6" Style="font-size: x-large; text-align: center; background-color: #e9ecef; border: 1px solid #ced4da; border-radius: .25rem;" ReadOnly="true"></asp:TextBox>
+                                                        <asp:TextBox ID="miscellaneous" runat="server" class="col-lg-6" Style="font-size: x-large; text-align: center; background-color: #e9ecef; border: 1px solid #ced4da; border-radius: .25rem;" Enabled="false"></asp:TextBox>
                                                     </div>
                                                     <div style="display: flex; margin-left: 50px; margin-top: 10px">
                                                         <h5 class="col-lg-4" style="font-weight: normal">Total :</h5>
-                                                        <asp:TextBox ID="total" runat="server" class="col-lg-6" Style="font-size: x-large; text-align: center; background-color: #e9ecef; border: 1px solid #ced4da; border-radius: .25rem;" ReadOnly="true"></asp:TextBox>
+                                                        <asp:TextBox ID="total" runat="server" class="col-lg-6" Style="font-size: x-large; text-align: center; background-color: #e9ecef; border: 1px solid #ced4da; border-radius: .25rem;" Enabled="false"></asp:TextBox>
                                                     </div>
                                                     <div style="display: flex; margin-left: 50px; margin-top: 50px">
                                                         <h3 class="col-lg-4" style="font-weight: normal">Other school fees
                                                             <br />
                                                             and events :</h3>
-                                                        <textarea class="col-lg-6" id="schoolfeelist" runat="server" style="font-size: x-large; text-align: center; padding: 10px;  background-color: #e9ecef; border: 1px solid #ced4da; border-radius: .25rem;" readonly="readonly"></textarea>
+                                                        <textarea class="col-lg-6" id="schoolfeelist" runat="server" style="font-size: x-large; text-align: center; padding: 10px;  background-color: #e9ecef; border: 1px solid #ced4da; border-radius: .25rem;" Enabled="false"></textarea>
                                                     </div>
                                                 </div>
                                             </div>
@@ -202,30 +177,33 @@
                                                     <h4>DISCOUNT</h4>
                                                 </div>
                                                 <div style="margin-left: 70px; margin-bottom: 20px">
-                                                    <asp:TextBox ID="discount" runat="server" class="col-lg-7" style="font-size: x-large; text-align: center;  background-color: #e9ecef; border: 1px solid #ced4da; border-radius: .25rem;" ReadOnly="true"></asp:TextBox>
+                                                    <asp:TextBox ID="discount" runat="server" class="col-lg-7" style="font-size: x-large; text-align: center;  background-color: #e9ecef; border: 1px solid #ced4da; border-radius: .25rem;" Enabled="false"></asp:TextBox>
                                                 </div>
                                             </div>
                                             <div style="margin-bottom: 40px">
                                                 <div style="display: flex; margin-left: 90px">
                                                     <h5 class="col-lg-4" style="font-weight: normal">Discount percentage :</h5>
-                                                    <asp:TextBox ID="percent" runat="server" class="col-lg-6" style="font-size: larger; text-align: center;  background-color: #e9ecef; border: 1px solid #ced4da; border-radius: .25rem;" ReadOnly="true"></asp:TextBox>
+                                                    <asp:TextBox ID="percent" runat="server" class="col-lg-6" Style="font-size: larger; text-align: center; background-color: #e9ecef; border: 1px solid #ced4da; border-radius: .25rem;" Enabled="false"></asp:TextBox>
                                                 </div>
                                                 <div style="display: flex; margin-left: 90px; margin-top: 10px">
                                                     <h5 class="col-lg-4" style="font-weight: normal">Other additional Discount :</h5>
-                                                    <asp:TextBox ID="other" runat="server" class="col-lg-6" Style="font-size: larger; text-align: center; background-color: #e9ecef; border: 1px solid #ced4da; border-radius: .25rem;" required=""></asp:TextBox>
+                                                    <asp:DropDownList ID="DropDownList1" runat="server" class="col-lg-6" Style="font-size: larger; text-align: center; background-color: #e9ecef; border: 1px solid #ced4da; border-radius: .25rem;">
+                                                        <asp:ListItem Text="Approved" Value="Approved" />
+                                                        <asp:ListItem Text="Declined" Value="Declined" />
+                                                    </asp:DropDownList>
                                                 </div>
-                                            <div>
+                                                <div>
                                                 <div style="display: flex; margin-left: 90px; margin-top: 10px">
                                                     <h5 class="col-lg-4" style="font-weight: normal">Total Amount of Discount :</h5>
                                                     <asp:TextBox ID="totaldiscount" runat="server" class="col-lg-6" style="font-size: larger; text-align: center; background-color: #e9ecef; border: 1px solid #ced4da; border-radius: .25rem;" ReadOnly="true"></asp:TextBox>
                                                 </div>
                                                 <div style="display: flex; margin-left: 90px; margin-top: 10px">
                                                     <h5 class="col-lg-4" style="font-weight: normal">School Fee :</h5>
-                                                    <asp:TextBox ID="fee" runat="server" class="col-lg-6" style="font-size: larger; text-align: center; background-color: #e9ecef; border: 1px solid #ced4da; border-radius: .25rem;" ReadOnly="true"></asp:TextBox>
+                                                    <asp:TextBox ID="fee" runat="server" class="col-lg-6" style="font-size: larger; text-align: center; background-color: #e9ecef; border: 1px solid #ced4da; border-radius: .25rem;" Enabled="false"></asp:TextBox>
                                                 </div>
                                                 <div style="display: flex; margin-left: 90px; margin-top: 10px">
                                                     <h5 class="col-lg-4" style="font-weight: normal">Total :</h5>
-                                                    <asp:TextBox ID="totalfinal" runat="server" class="col-lg-6" style="font-size: larger; text-align: center; background-color: #e9ecef; border: 1px solid #ced4da; border-radius: .25rem;" ReadOnly="true"></asp:TextBox>
+                                                    <asp:TextBox ID="totalfinal" runat="server" class="col-lg-6" style="font-size: larger; text-align: center; background-color: #e9ecef; border: 1px solid #ced4da; border-radius: .25rem;" Enabled="false"></asp:TextBox>
                                                 </div>
                                             </div>
                                         </div>
@@ -233,7 +211,7 @@
                                     <div style="display: flex; justify-content: flex-end">
                                         <div class="d-flex align-items-start gap-3 mt-4">
                                             <button type="button" class="btn btn-light btn-label previestab" data-previous="steparrow-gen-info-tab" style="display: flex; align-items: center; justify-content: center; border: solid 1px; border-color: gray; background-color: #2e8fc5; border-radius: 10px; color: white; width: 120px; gap: inherit;"><img src="../../Library/Images/backad.png" height="21" width="21"/>Back</button>
-                                            <asp:Button ID="Button1" runat="server" Text="Submit" class="btn btn-light btn-label" style="display: flex; align-items: center; justify-content: center; border: solid 1px; border-color: gray; background-color: #2e8fc5; border-radius: 10px; color: white; width: 120px"/>
+                                            <asp:Button ID="Button1" runat="server" Text="Submit" class="btn btn-light btn-label" style="display: flex; align-items: center; justify-content: center; border: solid 1px; border-color: gray; background-color: #2e8fc5; border-radius: 10px; color: white; width: 120px" OnClick="Button1_Click" />
                                         </div>
                                     </div>
                                 </div>
