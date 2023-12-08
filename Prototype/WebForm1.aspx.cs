@@ -1,7 +1,9 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
 using System.IO;
+using System.Web.Script.Serialization;
 using System.Web.UI.WebControls;
 
 namespace Prototype
@@ -15,46 +17,37 @@ namespace Prototype
 
         protected void UploadImage(object sender, EventArgs e)
         {
-            if (profileinput.HasFile)
+            if (!IsPostBack)
             {
-                try
-                {
-                    // Get the file name
-                    string fileName = Path.GetFileName(profileinput.FileName);
+                // Fetch data from the database
+                List<ChartData> chartData = GetDataFromDatabase();
 
-                    // Specify the server path to save the uploaded file
-                    string serverPath = Server.MapPath("~/Uploads/"); // Update this path accordingly
+                // Convert data to JSON for JavaScript consumption
+                string jsonChartData = new JavaScriptSerializer().Serialize(chartData);
 
-                    // Combine the server path and file name
-                    string filePath = Path.Combine(serverPath, fileName);
-
-                    // Save the file to the server
-                    profileinput.SaveAs(filePath);
-
-                    // Display the uploaded image (optional)
-                    userimage.Src = "~/Uploads/" + fileName; // Update the path accordingly
-
-                    // Now, you can save the file information in the database or perform other actions
-                }
-                catch (Exception ex)
-                {
-                    // Handle the exception (log, display error message, etc.)
-                    Response.Write($"<script>alert('Error uploading image: {ex.Message}');</script>");
-                }
-            }
-            else
-            {
-                // Handle the case where no file is selected
-                Response.Write("<script>alert('Please choose a file');</script>");
+                // Register a startup script to initialize the chart
+                Page.ClientScript.RegisterStartupScript(this.GetType(), "InitializeChart", $"initializeChart({jsonChartData});", true);
             }
         }
-        private void SaveImageInfoToDatabase(string fileName)
+        private List<ChartData> GetDataFromDatabase()
         {
-            // Update this part to insert the file information into the Student table in your database
-            // Use the 'fileName' variable to store the file name or path in the database
-            // ...
+            // Replace this with your actual data retrieval logic
+            // Example: You might use ADO.NET, Entity Framework, or another data access technology.
+            // Return a List<ChartData> with the data you want to display in the chart.
 
-
+            // Dummy data for demonstration purposes
+            return new List<ChartData>
+        {
+            new ChartData { Category = "Category 1", Value = 30 },
+            new ChartData { Category = "Category 2", Value = 20 },
+            new ChartData { Category = "Category 3", Value = 50 }
+        };
+        }
+        // Data model class
+        public class ChartData
+        {
+            public string Category { get; set; }
+            public int Value { get; set; }
         }
     }
 }

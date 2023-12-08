@@ -20,7 +20,7 @@
         <div class="container-fluid" style="background-color: ghostwhite; margin-top: 10px; padding: 20px">
             <div class="input-group mb-3" style="left: 0px; top: 0px">
                 <asp:Button ID="Button3" runat="server" Text="Search" OnClick="Button3_Click" Font-Size="20px" />
-                <asp:TextBox ID="TextBox1" runat="server" placeholder="Filter by Student ID" Width="25%" Font-Size="20px"></asp:TextBox>
+                <asp:TextBox ID="TextBox1" runat="server" placeholder="Filter by Student ID" Width="25%" Font-Size="20px" onkeypress="return isNumberKey(event)"></asp:TextBox>
             </div>
             <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
            <asp:UpdatePanel ID="UpdatePanel1" runat="server">
@@ -90,5 +90,16 @@
         // Restore the scroll position after postback
         window.scrollTo(0, scrollPosition);
     }
+
+        function isNumberKey(evt) {
+            var charCode = (evt.which) ? evt.which : event.keyCode;
+            if (charCode > 31 && (charCode < 48 || charCode > 57)) {
+                return false;
+            }
+            return true;
+        }
+
+
+
     </script>
 </asp:Content>
