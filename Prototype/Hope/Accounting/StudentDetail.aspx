@@ -195,7 +195,7 @@
                                                 <div>
                                                 <div style="display: flex; margin-left: 90px; margin-top: 10px">
                                                     <h5 class="col-lg-4" style="font-weight: normal">Total Amount of Discount :</h5>
-                                                    <asp:TextBox ID="totaldiscount" runat="server" class="col-lg-6" style="font-size: larger; text-align: center; background-color: #e9ecef; border: 1px solid #ced4da; border-radius: .25rem;" ReadOnly="true"></asp:TextBox>
+                                                    <asp:TextBox ID="totaldiscount" runat="server" class="col-lg-6" style="font-size: larger; text-align: center; background-color: #e9ecef; border: 1px solid #ced4da; border-radius: .25rem;" TextMode="Number"></asp:TextBox>
                                                 </div>
                                                 <div style="display: flex; margin-left: 90px; margin-top: 10px">
                                                     <h5 class="col-lg-4" style="font-weight: normal">School Fee :</h5>
