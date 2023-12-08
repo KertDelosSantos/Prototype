@@ -105,7 +105,7 @@
                         <td><%# Convert.ToDecimal(Eval("tuition")).ToString("N2") %></td>
                         <td><%# Convert.ToDecimal(Eval("miscellaneous")).ToString("N2") %></td>
                         <td><%# Convert.ToDecimal(Eval("total")).ToString("N2") %></td>
-                        <td><%# Convert.ToDecimal(Eval("discount")).ToString("0") + "%" %></td>
+                        <td><%# Convert.ToDecimal(Eval("discount_total")).ToString("0") + "%" %></td>
                         <td><%# Eval("discount_type") %></td>
                         <td><%# Convert.ToDecimal(Eval("schoolfee")).ToString("N2") %></td>
                         <td><%# Convert.ToDecimal(Eval("final_total")).ToString("N2") %></td>

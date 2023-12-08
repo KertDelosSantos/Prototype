@@ -114,19 +114,25 @@ namespace Prototype.Hope.Accounting
             string studentId = Request.QueryString["studentId"];
             if (!string.IsNullOrEmpty(studentId))
             {
-                string updateQuery = "UPDATE Payment SET other_discount = @other_discount WHERE student_id = @StudentId";
+                string updateQuery = "UPDATE Payment SET other_discount = @other_discount, discount_total = @discount_total WHERE student_id = @StudentId";
 
                 using (SqlConnection con = new SqlConnection(connectionString))
                 {
                     using (SqlCommand cmd = new SqlCommand(updateQuery, con))
                     {
                         cmd.Parameters.AddWithValue("@other_discount", DropDownList1.SelectedValue);
+                        cmd.Parameters.AddWithValue("@discount_total", totaldiscount.Text);
                         cmd.Parameters.AddWithValue("@StudentId", studentId);
 
                         con.Open();
                         cmd.ExecuteNonQuery();
+                        ScriptManager.RegisterStartupScript(this, GetType(), "alert", "swal('Success!', 'Registration Complete', 'success').then(function() { window.location.href = 'StudentList.aspx'; });", true);
                     }
                 }
+
+                
+
+
             }
             else
             {
