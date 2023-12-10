@@ -129,10 +129,6 @@ namespace Prototype.Hope.Accounting
                         ScriptManager.RegisterStartupScript(this, GetType(), "alert", "swal('Success!', 'Registration Complete', 'success').then(function() { window.location.href = 'StudentList.aspx'; });", true);
                     }
                 }
-
-                
-
-
             }
             else
             {
