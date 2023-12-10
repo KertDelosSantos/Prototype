@@ -2,11 +2,6 @@
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
-
-
-
-
-
 <asp:Content ID="Content2" ContentPlaceHolderID="Body" runat="server">
     <div class="container">
         <div class="row" style="height: 400px">
@@ -16,10 +11,6 @@
             <div class="col-sm-5" style="">
             </div>
         </div>
-
-
-
-
         <div class="row" style="height: 300px">
             <div class="col-sm" style="display: flex; align-items: center">
                 <div class="row g-2">
@@ -63,7 +54,7 @@
                         <div class="p-3 border bg-light" style="border-radius: 20px">
                             <a class="inner-div" href="Calendar.aspx">
                                 <div>
-                                    <img src="../../Library/Images/ADMIN__CASHIER.png"   style="width: 100px; height: 100px" />
+                                    <img src="../../Library/Images/ADMIN__CASHIER.png" style="width: 100px; height: 100px" />
                                 </div>
                                 <div style="display: flex; justify-content: center; width: 100%;">
                                     <h4>Calendar</h4>
@@ -75,7 +66,7 @@
             </div>
             <div class="col-sm" style="background-color: ghostwhite; padding: 20px; padding-bottom: 0; border-radius: 20px">
                 <h3>Recent</h3>
-                <a class="inner-div" href="StudentList.aspx" >
+                <a class="inner-div" href="StudentList.aspx">
                     <table border="1" width="100%" class="table caption-top">
                         <tr style="text-align: center">
                             <th>Date of Transaction</th>

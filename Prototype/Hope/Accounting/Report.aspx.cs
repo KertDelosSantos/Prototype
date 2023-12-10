@@ -24,12 +24,10 @@ namespace Prototype.Hope.Accounting
                 using (SqlCommand cmd = new SqlCommand(query, conn))
                 {
                     cmd.CommandType = CommandType.Text;
-
                     using (SqlDataAdapter adapter = new SqlDataAdapter(cmd))
                     {
                         DataTable dataTable = new DataTable();
                         adapter.Fill(dataTable);
-
                         ReportRepeater.DataSource = dataTable;
                         ReportRepeater.DataBind();
                     }
@@ -69,9 +67,7 @@ namespace Prototype.Hope.Accounting
         protected void rblFilter_SelectedIndexChanged(object sender, EventArgs e)
         {
             string selectedValue = rblFilter.SelectedValue;
-
             DataTable filteredData = GetFilteredData2(selectedValue);
-
             ReportRepeater.DataSource = filteredData;
             ReportRepeater.DataBind();
         }
@@ -188,6 +184,5 @@ namespace Prototype.Hope.Accounting
                 }
             }
         }
-
     }
 }
