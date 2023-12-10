@@ -5,8 +5,11 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="Body" runat="server">
     <div class="container">
         <div class="row" style="height: 400px">
-            <div class="col-sm-7" style="">
+            <div class="col-sm-7" style="display: flex;">
                 <img src="../../Library/Images/ADMIN__CASHIER___1.png" style="height: 370px; padding: inherit;" />
+                <div style="margin-top: 100px">
+                    <h2>WELCOME</h2>
+                </div>
             </div>
             <div class="col-sm-5" style="">
             </div>

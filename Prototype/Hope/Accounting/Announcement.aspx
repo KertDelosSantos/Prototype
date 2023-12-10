@@ -17,7 +17,6 @@
                 </div>
             </div>
             <div style="margin-right: 30px; display: flex; align-items: center;">
-                <asp:Button ID="Button1" runat="server" Text="+ Add New Announcement" OnClick="Button1_Click" BackColor="#0d6efd" ForeColor="White" BorderColor="#0d6efd" />
             </div>
         </div>
         <div class="container-fluid" style="padding: 20px; padding-left: 0px; gap: 20px; display: flex">

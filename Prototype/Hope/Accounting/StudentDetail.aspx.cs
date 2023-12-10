@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
 using System.Diagnostics;
+using System.Globalization;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
@@ -126,7 +127,26 @@ namespace Prototype.Hope.Accounting
 
                         con.Open();
                         cmd.ExecuteNonQuery();
-                        ScriptManager.RegisterStartupScript(this, GetType(), "alert", "swal('Success!', 'Registration Complete', 'success').then(function() { window.location.href = 'StudentList.aspx'; });", true);
+
+                        string transactionNoQuery = "SELECT transaction_id FROM [Transaction] WHERE student_id = @StudentId";
+                        using (SqlCommand transactionNoCmd = new SqlCommand(transactionNoQuery, con))
+                        {
+                            transactionNoCmd.Parameters.AddWithValue("@StudentId", studentId);  // Ensure @StudentId is properly set
+
+                            string transactionNo = transactionNoCmd.ExecuteScalar()?.ToString();
+
+                            // Use the retrieved transactionNo in your alert message
+                            string date = DateTime.Now.ToString("MMMM dd, yyyy"); // Current date
+                            string time = DateTime.Now.ToString("h:mm tt"); // Current time
+                            decimal amount;
+                            decimal.TryParse(totalfinal.Text, out amount);
+                            string formattedAmount = amount.ToString("C", CultureInfo.GetCultureInfo("en-PH"));
+
+                            string script = $"swal('Payment Success!', 'Transaction No.: {transactionNo}\\n Student Name: {stud_name.Text}\\n Date: {date}\\nTime: {time}\\n Payment Method: {method.Text}\\n \\n \\n  Amount:      {formattedAmount}', 'success')"
+                                            + ".then(function() { window.location.href = 'StudentList.aspx'; });";
+
+                            ScriptManager.RegisterStartupScript(this, GetType(), "alert", script, true);
+                        }
                     }
                 }
             }
