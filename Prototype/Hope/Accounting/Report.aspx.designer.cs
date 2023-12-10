@@ -42,6 +42,15 @@ namespace Prototype.Hope.Accounting
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl h4total;
 
         /// <summary>
+        /// h4fee control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl h4fee;
+
+        /// <summary>
         /// search control.
         /// </summary>
         /// <remarks>

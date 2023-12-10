@@ -36,6 +36,7 @@ namespace Prototype.Hope.Accounting
                 {
                     UpdateTotalPendingCount();
                     UpdateTotalPendingAmount();
+                    UpdateTotalfeeAmount();
                 }
             }
         }
@@ -180,6 +181,32 @@ namespace Prototype.Hope.Accounting
                     else
                     {
                         h4total.InnerText = "P 0.00"; // or any default value
+                    }
+                }
+            }
+        }
+        protected void UpdateTotalfeeAmount()
+        {
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                connection.Open();
+                string query = "SELECT SUM(schoolfee) FROM Payment";
+
+                using (SqlCommand command = new SqlCommand(query, connection))
+                {
+                    object totalSchoolFee = command.ExecuteScalar();
+
+                    if (totalSchoolFee != DBNull.Value)
+                    {
+                        decimal totalAmount = Convert.ToDecimal(totalSchoolFee);
+
+                        // Specify the culture to use the Philippine Peso symbol
+                        CultureInfo culture = new CultureInfo("en-PH");
+                        h4fee.InnerText = totalAmount.ToString("C", culture);
+                    }
+                    else
+                    {
+                        h4fee.InnerText = "P 0.00"; // or any default value
                     }
                 }
             }
