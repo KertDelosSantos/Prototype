@@ -41,8 +41,8 @@ namespace Prototype.Hope.Accounting
                     cmd.ExecuteNonQuery();
                     con.Close();
                 }
-                    ScriptManager.RegisterStartupScript(this, GetType(), "alert", "swal('Success!', 'Announcement Complete', 'success');", true);
-               
+                    //ScriptManager.RegisterStartupScript(this, GetType(), "alert", "swal('Success!', 'Announcement Complete', 'success');", true);
+                    Response.Write("<script>alert('Announcement Success');</script>");
                     ClearInputs();
                 }
             else

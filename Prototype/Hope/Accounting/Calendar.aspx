@@ -25,7 +25,7 @@
                         </asp:Calendar>
                     </div>
                 </div>
-    </div>
+            </div>
             <div class="col-4" style="background-color: ghostwhite">
                 <div style="padding: 20px">
                     <div class="col">
@@ -38,7 +38,7 @@
                             <div class="p-3 border bg-light" style="border-radius: 20px">
                                 <a class="inner-div" href="#">
                                     <div style="display: flex; width: 100%; height: 100px; flex-direction: column; align-items: center; gap: 20px;">
-                                        <h5>Bills Awaiting Payment</h5>
+                                        <h5></h5>
                                         <h4>####</h4>
                                     </div>
                                 </a>
@@ -48,7 +48,7 @@
                             <div class="p-3 border bg-light" style="border-radius: 20px">
                                 <a class="inner-div" href="#">
                                     <div style="display: flex; width: 100%; height: 100px; flex-direction: column; align-items: center; gap: 20px;">
-                                        <h5>Bills Awaiting Payment</h5>
+                                        <h5></h5>
                                         <h4>####</h4>
                                     </div>
                                 </a>
@@ -63,7 +63,7 @@
                             <div class="p-3 border bg-light" style="border-radius: 20px">
                                 <a class="inner-div" href="#">
                                     <div style="display: flex; width: 100%; height: 100px; flex-direction: column; align-items: center; gap: 20px;">
-                                        <h5>Bills Awaiting Payment</h5>
+                                        <h5></h5>
                                         <h4>####</h4>
                                     </div>
                                 </a>
@@ -73,7 +73,7 @@
                             <div class="p-3 border bg-light" style="border-radius: 20px">
                                 <a class="inner-div" href="#">
                                     <div style="display: flex; width: 100%; height: 100px; flex-direction: column; align-items: center; gap: 20px;">
-                                        <h5>Bills Awaiting Payment</h5>
+                                        <h5></h5>
                                         <h4>####</h4>
                                     </div>
                                 </a>
