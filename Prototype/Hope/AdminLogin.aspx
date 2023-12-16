@@ -42,7 +42,7 @@
                 </div>
                 <div class="input_container">
                     <asp:Button ID="LoginButton" runat="server" CssClass="button" Text="Login" OnClick="adminlogin_Click" />
-                    <span class="line"><a href="StudentLogin.aspx">Student Login</a></span>
+                    <span class="line" style="margin-top: 10px"><a href="StudentLogin.aspx">Student Login</a></span>
                 </div>
             </div>
             <div class="content">

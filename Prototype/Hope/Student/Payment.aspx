@@ -10,105 +10,106 @@
             .hero-section {
                 background: url("images/bgdashboard.png") no-repeat center center;
                 background-size: cover;
-                padding: 60px 0; 
+                padding: 60px 0;
             }
 
                 .hero-section .container {
-                    background: rgba(255, 255, 255, 0.0); 
+                    background: rgba(255, 255, 255, 0.0);
                     padding: 20px;
                 }
 
             #hero {
-                height: 90.8vh; 
-                margin: 0; 
-                padding: 0; 
+                height: 90.8vh;
+                margin: 0;
+                padding: 0;
             }
-            
+
             .green-tab {
-                background-color: #4CAF50; 
-                color: #fff; 
+                background-color: #4CAF50;
+                color: #fff;
             }
+
             #otherFeesModal {
-    display: none;
-    position: fixed;
-    z-index: 1000; 
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    overflow: auto;
-    background-color: rgba(0,0,0,0.4);
-}
+                display: none;
+                position: fixed;
+                z-index: 1000;
+                left: 0;
+                top: 0;
+                width: 100%;
+                height: 100%;
+                overflow: auto;
+                background-color: rgba(0,0,0,0.4);
+            }
 
-.modal-content {
-    background-color: #fefefe;
-    margin: 10% auto; 
-    padding: 20px;
-    border: 1px solid #888;
-    width: 60%; 
-    max-width: 600px; 
-    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
-    border-radius: 8px; 
-    animation: animatetop 0.4s;
-    font-size: 16px; 
-}
+            .modal-content {
+                background-color: #fefefe;
+                margin: 10% auto;
+                padding: 20px;
+                border: 1px solid #888;
+                width: 60%;
+                max-width: 600px;
+                box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+                border-radius: 8px;
+                animation: animatetop 0.4s;
+                font-size: 16px;
+            }
 
-.close {
-    color: #aaa;
-    float: right;
-    font-size: 28px;
-    font-weight: bold;
-}
+            .close {
+                color: #aaa;
+                float: right;
+                font-size: 28px;
+                font-weight: bold;
+            }
 
-.close:hover,
-.close:focus {
-    color: #000;
-    text-decoration: none;
-    cursor: pointer;
-}
+                .close:hover,
+                .close:focus {
+                    color: #000;
+                    text-decoration: none;
+                    cursor: pointer;
+                }
 
-.form-group {
-    margin-bottom: 15px; 
-}
-
-
-.form-group label {
-    display: block;
-    margin-bottom: 10px;
-    font-weight: bold;
-}
+            .form-group {
+                margin-bottom: 15px;
+            }
 
 
-
-button {
-    padding: 10px 15px;
-    font-size: 16px;
-    margin-top: 20px;
-    width: auto;
-    background-color: #5cb85c; 
-    color: white;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-}
-#otherFeesModal .modal-content h2 {
-    text-align: center;
-    margin: 0; 
-    padding: 20px 0; 
-}
+                .form-group label {
+                    display: block;
+                    margin-bottom: 10px;
+                    font-weight: bold;
+                }
 
 
-button:hover {
-    background-color: #4cae4c; 
-}
+
+            button {
+                padding: 10px 15px;
+                font-size: 16px;
+                margin-top: 20px;
+                width: auto;
+                background-color: #5cb85c;
+                color: white;
+                border: none;
+                border-radius: 4px;
+                cursor: pointer;
+            }
+
+            #otherFeesModal .modal-content h2 {
+                text-align: center;
+                margin: 0;
+                padding: 20px 0;
+            }
+
+
+            button:hover {
+                background-color: #4cae4c;
+            }
 
 
             @media (max-width: 768px) {
                 .modal-content {
-                    width: 90%; 
-                    margin-top: 20%; 
+                    width: 90%;
+                    margin-top: 20%;
                 }
-
             }
         </style>
         <section class="section pb-0 hero-section" id="hero">
@@ -297,8 +298,8 @@ button:hover {
                                                 </div>
                                                 <div style="padding-left: 75px">
                                                     <asp:RadioButtonList ID="RadioButtonList1" runat="server" RepeatDirection="Horizontal" Font-Size="x-Large" Width="100%" CssClass="form-check form-check-inline">
-                                                         <asp:ListItem>Partial Payment</asp:ListItem>
-                                                    <asp:ListItem>Full Payment</asp:ListItem>
+                                                        <asp:ListItem>Partial Payment</asp:ListItem>
+                                                        <asp:ListItem>Full Payment</asp:ListItem>
                                                     </asp:RadioButtonList>
                                                 </div>
                                                 <div style="display: flex; margin-left: 50px; margin-top: 20px">
@@ -321,7 +322,7 @@ button:hover {
                                                                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                                             </div>
                                                             <div class="modal-body">
-                                                                <img src="../../Library/Images/qr.jpg"  alt="Gcash QR Code" class="img-fluid">
+                                                                <img src="../../Library/Images/qr.jpg" alt="Gcash QR Code" class="img-fluid">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -348,33 +349,33 @@ button:hover {
                                                     <h4>DISCOUNT</h4>
                                                     <button type="button" class="btn btn-info" onclick="otherFeesButton" id="otherFeesButton">Other School Fees</button>
                                                     <!-- Other School Fees Modal -->
-                                                   <div id="otherFeesModal" class="modal" style="display: none;">
-    <div class="modal-content">
-        <span class="close">&times;</span>
-        <h2>Other School Fees</h2>
-        <!-- School Events -->
-        <div class="form-group">
-            <label>SCHOOL EVENTS: </label>
-            <div class="checkbox-group">
-                <label for="fieldtrip">Fieldtrip</label>
-                <label for="jsprom">JS Prom</label>
-                <label for="retreat">Retreat</label>
-                <label for="graduation">Graduation</label>  
-            </div>
-        </div>      
-        <div class="form-group">
-            <label>OTHER SCHOOL FEES: </label>
-            <div class="checkbox-group">
-                <label for="schoolUniform">School Uniform</label>
-                <label for="peuniform">PE Uniform</label>
-                <label for="foundationtshirt">Foundation T-shirt</label>
-                <label for="scoutuniform">Scout Uniform</label>
-                <label for="books">Books</label>               
-            </div>
-        </div>
-       
-    </div>
-</div>
+                                                    <div id="otherFeesModal" class="modal" style="display: none;">
+                                                        <div class="modal-content">
+                                                            <span class="close">&times;</span>
+                                                            <h2>Other School Fees</h2>
+                                                            <!-- School Events -->
+                                                            <div class="form-group">
+                                                                <label>SCHOOL EVENTS: </label>
+                                                                <div class="checkbox-group">
+                                                                    <label for="fieldtrip">Fieldtrip</label>
+                                                                    <label for="jsprom">JS Prom</label>
+                                                                    <label for="retreat">Retreat</label>
+                                                                    <label for="graduation">Graduation</label>
+                                                                </div>
+                                                            </div>
+                                                            <div class="form-group">
+                                                                <label>OTHER SCHOOL FEES: </label>
+                                                                <div class="checkbox-group">
+                                                                    <label for="schoolUniform">School Uniform</label>
+                                                                    <label for="peuniform">PE Uniform</label>
+                                                                    <label for="foundationtshirt">Foundation T-shirt</label>
+                                                                    <label for="scoutuniform">Scout Uniform</label>
+                                                                    <label for="books">Books</label>
+                                                                </div>
+                                                            </div>
+
+                                                        </div>
+                                                    </div>
                                                     <script>
                                                         var modal = document.getElementById("otherFeesModal");
                                                         var btn = document.getElementById("otherFeesButton");
@@ -474,7 +475,7 @@ button:hover {
                                 </div>
                                 <!-- end tab pane -->
                             </div>
-                        <!-- end tab content -->
+                            <!-- end tab content -->
                         </div>
                     </div>
                     <!-- end card body -->
@@ -600,6 +601,12 @@ button:hover {
                     break;
                 case "Grade 10":
                     tuition = 41012;
+                    break;
+                case "Grade 11":
+                    tuition = 62014;
+                    break;
+                case "Grade 12":
+                    tuition = 62014;
                     break;
                 // Add more cases for other grade levels if needed
                 // Default case (if grade level is not specified)
