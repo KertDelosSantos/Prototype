@@ -156,6 +156,8 @@ button:hover {
                                                         <option value="Grade 8">Grade 8</option>
                                                         <option value="Grade 9">Grade 9</option>
                                                         <option value="Grade 10">Grade 10</option>
+                                                        <option value="Grade 11">Grade 11</option>
+                                                        <option value="Grade 12">Grade 12</option>
                                                     </select>
                                                     <div class="invalid-feedback">Please Select a Grade Level</div>
                                                 </div>
