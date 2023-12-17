@@ -44,7 +44,7 @@
                         <span class="line"><a href="AdminLogin.aspx">Login as Admin</a></span>
                     </div>
                     <div class="text-center">
-                        Already have an account? <a href="StudentCreate.aspx" class="text-primary">Sign Up</a>
+                        Don't have an account? <a href="StudentCreate.aspx" class="text-primary">Sign Up</a>
                     </div>
                 </div>
             </div>
